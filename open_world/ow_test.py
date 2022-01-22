@@ -130,12 +130,12 @@ def numeric_lable(data):
     return numeric_data
 
 
-def main():
-    model = tf.keras.models.load_model('/home/erc/PycharmProjects/ow/model/cnn_lstm_ow_obf_linux_chrome_stm_0.347.h5')
+def main(data_path, model_path):
+    model = tf.keras.models.load_model(model_path)
     # X_train, y_train, X_test, y_test, num_classes = su.load_split_data('/home/lhp/PycharmProjects/ow/data/ow_obf_linux_ff_stm.csv', 15000)
     # y_test = np.reshape(y_test, (-1,1))
     # test_data = np.append(y_test, X_test, axis=1)
-    data = pd.read_csv('/media/erc/Mistake/open_world/ow_linux_chrome/ow_obf_linux_chrome_stm.csv')
+    data = pd.read_csv(data_path)
     data = numeric_lable(data)
     # split_Mon_UnNon(data)
     mon_x_test, mon_y_test, unmon_x_test, unmon_y_test = split_Mon_UnNon(data)
@@ -162,4 +162,6 @@ def main():
 
 if __name__ == '__main__':
     # opts = parseOpts(sys.argv)
-    main()
+    data_path = sys.argv[1]
+    model_path = sys.argv[2]
+    main(data_path, model_path)
