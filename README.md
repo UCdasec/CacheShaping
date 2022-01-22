@@ -21,7 +21,7 @@ The `open_world` directory contains the codes for open-world evaluation.
 
 The `defense` directory contains the code for CacheShaping algorithm
 
-`python run_collect.py 'Chrome' /path/to/your/address_lists'
+`python run_collect.py 'Chrome' /path/to/your/address_lists`
 
 The `detection` directory contains the html and JavaScript files for cache occupancy attack detection.
 
