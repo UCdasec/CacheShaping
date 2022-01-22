@@ -84,7 +84,7 @@ class nniRep(Callback):
         nni.report_intermediate_result(logs['val_acc'])
 
 
-def train(model, params, X_train, y_train, X_test, y_test):
+def train(model, params, X_train, y_train, X_test, y_test, out_path):
     print('Generating Model...')
 
     # modelDir = 'modelDir'
@@ -105,7 +105,7 @@ def train(model, params, X_train, y_train, X_test, y_test):
 
     lrs = LearningRateScheduler(schedule)
     print('Traning Model...')
-    checkpointer = ModelCheckpoint(filepath='/home/usr/Documents/models/cnn_wf.hdf5',
+    checkpointer = ModelCheckpoint(filepath=out_path,
                                    monitor='val_acc', verbose=1, save_best_only=True, mode='max')
     history = model.fit(X_train, y_train, batch_size=params['batch_size'],
                         epochs=params['epochs'], validation_split=0.2, callbacks=[nniRep(), es, lrs])
@@ -120,18 +120,18 @@ def train(model, params, X_train, y_train, X_test, y_test):
 def test(params, model, X_test, y_test, NUM_CLASS):
     print('Predicting results with best model...')
     # model = built_and_compile(params, NUM_CLASS)
-    # model = load_model('/home/haipeng/Documents/models/wf/' + modelname)
+    # model = load_model(out_path)
     score, acc = model.evaluate(X_test, y_test, batch_size=100)
 
     nni.report_final_result(acc)
     modelname = 'obf_linux_chrome_' + str(acc) + '.h5'
-    model.save('/home/usr/Documents/models/cache/' + modelname)
+    #model.save('/home/usr/Documents/models/cache/' + modelname)
     print('Test score:', score)
     print('Test accuracy:', acc)
     return score, acc
 
 
-def main():
+def main(data_path, out_path):
     try:
         # get parameters from tuner
         RECEIVED_PARAMS = nni.get_next_parameter()
@@ -139,21 +139,22 @@ def main():
         PARAMS = default_params()
         PARAMS.update(RECEIVED_PARAMS)
         LOG.debug(PARAMS)
-        X_train, y_train, X_test, y_test, num_classes = su.load_split_data('/home/usr/Documents/dataset/obf_linux_chrome.csv', PARAMS['data_dim'])
+        X_train, y_train, X_test, y_test, num_classes = su.load_split_data(data_path, PARAMS['data_dim'])
         print('num_classes is ' + str(num_classes))
 
         X_train = np.expand_dims(X_train, axis=2)
         X_test = np.expand_dims(X_test, axis=2)
         model = built_and_compile(PARAMS, num_classes)
-        m = train(model, PARAMS, X_train, y_train, X_test, y_test)
-        score, acc = test(PARAMS, m, X_test, y_test, num_classes)
+        m = train(model, PARAMS, X_train, y_train, X_test, y_test, out_path)
+        score, acc = test(PARAMS, m, X_test, y_test, num_classes, out_path)
     except Exception as exception:
         LOG.exception(exception)
         raise
 
 if __name__ == '__main__':
     # opts = parseOpts(sys.argv)
-
+    data_path = sys.argv[1]
+    out_path = sys.argv[2]
     print(tf.test.is_built_with_cuda())
     print(tf.test.is_gpu_available())
-    main()
+    main(data_path, out_path)
