@@ -13,11 +13,11 @@ The `auto_cache_collection` directory contains the code to automatically launch 
 
 The `attack` directory contains the code for CNN and LSTM models.
 
-```python cnn_cache.py /path/to/your/data /path/to/your/output_model```
+`python cnn_cache.py /path/to/your/data /path/to/your/output_model`
 
 The `open_world` directory contains the codes for open-world evaluation.
 
-``python ow_test.py /path/to/your/test_data /path/to/your/trained_model``
+`python ow_test.py /path/to/your/test_data /path/to/your/trained_model`
 
 The `defense` directory contains the code for CacheShaping algorithm
 
