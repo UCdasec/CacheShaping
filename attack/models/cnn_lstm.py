@@ -109,7 +109,7 @@ def train(model, params, X_train, y_train, X_test, y_test, out_path):
     return model
 
 
-def test(params, model, X_test, y_test, NUM_CLASS, out_path):
+def test(params, model, X_test, y_test, NUM_CLASS):
     print('Predicting results with best model...')
     # model = built_and_compile(params, NUM_CLASS)
     # model = load_model(out_path)
