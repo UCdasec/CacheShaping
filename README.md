@@ -1,8 +1,10 @@
 # CacheShaping
 
-This repository contains the source code and data for CacheShaping, a new proposed software-level defense algorithm against cache occupancy channel based website fingerprinting. CacheShaping is able to reduce the attack accuracy to a low level by introducing dummy I/O operations with multiple processes.
+This repository contains the source code and data for Cache Shaping, a software-level defense algorithm against cache-based website fingerprinting attacks. Cache Shaping is able to reduce the attack accuracy to a low level by introducing dummy I/O operations with multiple processes.
 
 **The dataset and code are for research purposes only**. The results of this study are published in the following paper: 
+
+Haipeng Li, Nan Niu, Boyang Wang, “Cache Shaping: An Effective Defense Against Cache-Based Website Fingerprinting,” the 12th ACM Conference on Data and Application Security and Privacy (ACM CODASPY 2022), April 24–27, 2022, Baltimore, MD, USA. 
 
 ******.  
 
