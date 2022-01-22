@@ -26,7 +26,7 @@ The `utils` directory contains the code for preprocessing datasets.
 
 All the original data (i.e., non-defended cache data), defended data and the list of wesites we used both closed-world setting and open-world setting can be found below:
 
-http:*********
+https://mailuc-my.sharepoint.com/:f:/g/personal/wang2ba_ucmail_uc_edu/EnJCf-CuaRpNs-Uy3NUM0jkBLZVrdLm2jVRBdGBDlEapwg?e=oWGBSu 
 
 
 ## Neural Networks
@@ -37,7 +37,7 @@ We leveraged CNN and LSTM to evaluate the attack and defense performance. Detail
 
 When reporting results that use the dataset or code in this repository, please cite:
 
-******. 
+Haipeng Li, Nan Niu, Boyang Wang, “Cache Shaping: An Effective Defense Against Cache-Based Website Fingerprinting,” the 12th ACM Conference on Data and Application Security and Privacy (ACM CODASPY 2022), April 24–27, 2022, Baltimore, MD, USA. 
 
 
 ## Contacts
