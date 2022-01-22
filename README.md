@@ -6,7 +6,6 @@ This repository contains the source code and data for Cache Shaping, a software-
 
 Haipeng Li, Nan Niu, Boyang Wang, “Cache Shaping: An Effective Defense Against Cache-Based Website Fingerprinting,” the 12th ACM Conference on Data and Application Security and Privacy (**ACM CODASPY 2022**), April 24–27, 2022, Baltimore, MD, USA. 
 
-******.  
 
 ## Content
 
