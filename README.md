@@ -17,6 +17,8 @@ The `attack` directory contains the code for CNN and LSTM models.
 
 The `open_world` directory contains the codes for open-world evaluation.
 
+`python ow_test.py /path/to/your/test_data /path/to/your/trained_model`
+
 The `defense` directory contains the code for CacheShaping algorithm
 
 The `detection` directory contains the html and JavaScript files for cache occupancy attack detection.
