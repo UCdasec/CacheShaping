@@ -235,9 +235,11 @@ def attack(type, idx, address_lists):
 if __name__ == '__main__':
     # browser = 'firefox'
     # browser = 'chrome'
-    browser = 'tor'
+    browser = sys.argv[1]
+    address_lists_path = sys.argv[2]
+    #browser = tor
 
-    address_lists = pd.read_csv('/home/erc/PycharmProjects/cache_attack/address_list.csv')
+    address_lists = pd.read_csv(address_lists_path)
     # address_lists = pd.read_csv('/home/erc/PycharmProjects/cache_attack/open_world_list.csv')
     # address_list = address_lists.iloc[:500, :]
 
@@ -245,10 +247,10 @@ if __name__ == '__main__':
     # for i in range(25):
     #     b_attack(browser, i, address_lists)
     # subprocess.Popen(["./def_mp"])
-    # for i in range(50, 100):
-    #     attack(browser, i, address_lists)
-    reachable_list = site_connection_check(browser,address_lists)
-    df = pd.DataFrame(reachable_list)
-    df.to_csv("reachable_list.csv")
+    for i in range(100):
+        attack(browser, i, address_lists)
+    #reachable_list = site_connection_check(browser,address_lists)
+    #df = pd.DataFrame(reachable_list)
+    #df.to_csv("reachable_list.csv")
     # attack(browser, 0, address_lists)
     # detection_attack(browser, 0, address_list, sen_list)
