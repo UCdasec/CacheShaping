@@ -146,7 +146,7 @@ def main(data_path, out_path):
         X_test = np.expand_dims(X_test, axis=2)
         model = built_and_compile(PARAMS, num_classes)
         m = train(model, PARAMS, X_train, y_train, X_test, y_test, out_path)
-        score, acc = test(PARAMS, m, X_test, y_test, num_classes, out_path)
+        score, acc = test(PARAMS, m, X_test, y_test, num_classes)
     except Exception as exception:
         LOG.exception(exception)
         raise
