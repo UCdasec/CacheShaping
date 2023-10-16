@@ -29,9 +29,9 @@ The `utils` directory contains the code for preprocessing datasets.
 
 ## Dataset
 
-All the original data (i.e., non-defended cache data), defended data and the list of wesites we used both closed-world setting and open-world setting can be found below (**last modified: Jan. 2022**)
+All the original data (i.e., non-defended cache data), defended data and the list of wesites we used both closed-world setting and open-world setting can be found below (**last modified: Oct. 2023**)
 
-https://mailuc-my.sharepoint.com/:f:/g/personal/wang2ba_ucmail_uc_edu/EnJCf-CuaRpNs-Uy3NUM0jkBLZVrdLm2jVRBdGBDlEapwg?e=oWGBSu 
+https://mailuc-my.sharepoint.com/:f:/g/personal/wang2ba_ucmail_uc_edu/EnJCf-CuaRpNs-Uy3NUM0jkBE1sITPX_IMfXAF0l5hON1A?e=kXxwqi
 
 Note: the above links need to be updated every 6 months due to certain settings of OneDrive. If you find the links are expired and you cannot access the data, please feel free to email us (boyang.wang@uc.edu). We will be update the links as soon as we can. Thanks!
 
